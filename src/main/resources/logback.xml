@@ -1,33 +1,39 @@
 <configuration>
 
-    <!-- Nivel por defecto para todos -->
+    <!-- Nivel por defecto para el proyecto -->
     <root level="debug">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
 
-    <!-- Consola -->
+    <!-- Los Logs de la consola -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- Formato de los Logs de la consola -->
         <encoder>
             <pattern>AVISO CONSOLA --> %d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <!-- Archivo -->
+    <!-- Los Logs del archivo -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>target/logs/app.log</file>
+        <!-- Archivo principal de los logs -->
+        <file>logs/app.log</file>
 
+        <!-- Cuantos archivos de rotación y que nombre tendran -->
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>target/logs/app.%i.log</fileNamePattern>
+            <fileNamePattern>logs/app.%i.log</fileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>1</maxIndex>
         </rollingPolicy>
 
+        <!-- Tamaño máximo del archivo -->
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
             <maxFileSize>1MB</maxFileSize>
         </triggeringPolicy>
 
+        <!-- Formato de los Logs del archivo -->
         <encoder>
+            <!-- Ejemplo: 2025-09-21 17:49:49 INFO  es.erlantzg.App - Iniciando aplicación JavaFX... -->
             <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>

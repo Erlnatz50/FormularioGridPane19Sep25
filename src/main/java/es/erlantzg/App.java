@@ -24,7 +24,7 @@ public class App extends Application {
             Scene scene = new Scene(loaded.load());
             logger.info("FXML cargado correctamente");
 
-            // Comprobar que el archivo de css existe y sino mostrar una alerta
+            // Comprobar que el archivo de CSS existe y si no mostrar una alerta
             logger.debug("Buscando el archivo CSS");
             var archivoCSS = getClass().getResource("/css/estilo.css");
             if(archivoCSS != null){
@@ -36,7 +36,7 @@ public class App extends Application {
             }
 
             logger.info("Cargar la aplicación");
-            stage.setTitle("FlowPane Alignment");
+            stage.setTitle("Creating Forms Using a GridPane");
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
@@ -53,7 +53,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        logger.info("Iniciando aplicacion JavaFX...");
+        logger.info("Iniciando aplicación JavaFX...");
         launch();
     }
 

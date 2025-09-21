@@ -4,19 +4,19 @@
     <groupId>es.erlantzg</groupId>
     <artifactId>FormularioGridPane19Sep25</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <!-- modificio para fatjar -->
+    <!-- Tipo de empaquetado (para fatjar) -->
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-        <!-- Main class para fatjar -->
+        <!-- Clase principal para el fatjar -->
         <mainClass>es.erlantzg.Lanzador</mainClass>
     </properties>
 
     <dependencies>
-        <!-- JavaFX -->
+        <!-- Dependencias de JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -57,14 +57,14 @@
 
     <build>
         <plugins>
-            <!-- Generar el JAVADOC -->
+            <!-- Plugin para generar el Javadoc -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.11.3</version>
             </plugin>
 
-            <!-- Compilar en Java 11 -->
+            <!-- Plugin para compilar en Java 11 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -74,12 +74,13 @@
                 </configuration>
             </plugin>
 
+            <!-- Plugin para empaquetar el JAR ejecutable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <!-- modificacion para jar -->
+                    <!-- modificación para jar -->
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
@@ -90,7 +91,7 @@
                 </configuration>
             </plugin>
 
-            <!-- para ejecutar el .jar -->
+            <!-- Para poder ejecutar el JAR (.jar) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -109,7 +110,7 @@
                 </executions>
             </plugin>
 
-            <!-- Ejecutar desde Maven -->
+            <!-- Plugin para ejecutar JavaFX desde Maven -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
