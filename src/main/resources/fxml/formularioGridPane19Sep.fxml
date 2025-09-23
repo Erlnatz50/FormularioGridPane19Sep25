@@ -4,12 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane prefHeight="280.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/24.0.1">
+<GridPane prefHeight="280.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.erlantzg.GridPaneController">
 
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" percentWidth="80.0" prefWidth="350.0" />
@@ -27,14 +28,30 @@
 
       <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
         <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="label-nom-desc" text="Name:" />
-        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+        <TextField fx:id="txtNombre" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+             <tooltip>
+                <Tooltip text="Introduce tu nombre" />
+             </tooltip>
+        </TextField>
       </HBox>
 
-      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="botones" text="OK" GridPane.columnIndex="1" />
-      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="botones" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnOk" styleClass="botones" text="OK" GridPane.columnIndex="1">
+          <tooltip>
+             <Tooltip text="Mandar los datos" />
+          </tooltip>
+      </Button>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#btnCancel" styleClass="botones" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="1">
+          <tooltip>
+             <Tooltip text="Borrar los datos" />
+          </tooltip>
+      </Button>
 
-      <TextArea maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.rowIndex="2" />
+      <TextArea fx:id="txtDescripcion" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" wrapText="true" GridPane.rowIndex="2">
+          <tooltip>
+             <Tooltip text="Introduce una descripción" />
+          </tooltip>
+      </TextArea>
 
-      <Label styleClass="label-status" text="Status: Ready" GridPane.rowIndex="3" />
+      <Label fx:id="lblStatus" styleClass="label-status" text="Status: Ready" GridPane.rowIndex="3" />
 
 </GridPane>

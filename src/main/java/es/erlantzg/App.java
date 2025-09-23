@@ -9,13 +9,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * JavaFX App
+ * Clase principal de la aplicación JavaFX.
+ * Esta clase extiende {@link Application} y se encarga de:
+ * - Cargar la interfaz desde un archivo FXML.
+ * - Aplicar la hoja de estilos CSS.
+ * - Configurar el stage principal y mostrar la ventana.
+ * - Registrar mensajes de log con SLF4J.
+ * Contiene también el metodo {@link #main(String[])} para lanzar la aplicación.
+ *
+ * @author Erlantz Garcia
+ * @version 1.0
  */
 public class App extends Application {
 
-    // Logger para esta clase
+    /** Logger para esta clase */
     private static final Logger logger = LoggerFactory.getLogger(App.class);
 
+    /**
+     * Metodo principal que se ejecuta al iniciar la aplicacion JavaFX.
+     * Carga el FXML, aplica el CSS, configura el stage y muetra la ventana.
+     * Si ocurre algun error, muestra una alerta y lo registrara en el Log.
+     *
+     * @param stage Stage principal proporcionado por JavaFX.
+     */
     @Override
     public void start(Stage stage) {
         try{
@@ -47,11 +63,20 @@ public class App extends Application {
         }
     }
 
+    /**
+     * Metodo que se ejecuta cuando cierra la aplicacion.
+     * Registra un mensaje de cierre en el archivo de Log.
+     */
     @Override
     public void stop(){
         logger.info("Aplicación finalizada correctamente");
     }
 
+    /**
+     * Metodo principal que lanza la aplicacion JavaFX
+     *
+     * @param args Argumentos de linea de comandos (no usados).
+     */
     public static void main(String[] args) {
         logger.info("Iniciando aplicación JavaFX...");
         launch();
